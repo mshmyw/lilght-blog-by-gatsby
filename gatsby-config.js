@@ -1,19 +1,26 @@
+'use strict'
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: 'Example',
+    description: 'This is an example site I made.',
+    siteUrl: 'https://example.com',
+    author: {
+      name: 'Jeff Rafter',
+      url: 'https://twitter.com/jeffrafter',
+      email: 'jeffrafter@gmail.com',
+    },
     social: {
-      twitter: `kylemathews`,
+      twitter: 'https://twitter.com/jeffrafter',
+      github: 'https://github.com/jeffrafter',
     },
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/content/posts`,
+        name: `posts`,
       },
     },
     {
@@ -30,7 +37,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 1280,
             },
           },
           {
@@ -39,40 +46,41 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          `gatsby-remark-autolink-headers`,
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        siteUrl: `https://jeffrafter.com`,
       },
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Jeff Rafter`,
+        short_name: `jeffrafter.com`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `static/logo.png`,
       },
     },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
+        // trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-typescript`,
+    `gatsby-transformer-sharp`,
   ],
 }
