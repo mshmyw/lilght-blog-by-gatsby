@@ -3,6 +3,7 @@ import {graphql} from 'gatsby'
 
 import Layout from '../components/layout'
 import Head from '../components/head'
+import TypedComponent from '../components/typed'
 
 interface Props {
   readonly data: PageQueryData
@@ -16,7 +17,16 @@ export default class Tags extends React.Component<Props> {
     return (
       <Layout title={siteTitle}>
         <Head title="All tags" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
-        <article>About Jeff Rafter...</article>
+        <article>
+          <p id="element">
+          About Jeff Rafter...
+          </p></article>
+          <TypedComponent
+            strings={[
+              'Some <i>strings</i> are slanted',
+              'Some <strong>strings</strong> are bold',
+            ]}
+          />
       </Layout>
     )
   }
