@@ -2,6 +2,13 @@ import React from 'react'
 import {Link} from 'gatsby'
 import {GlobalStyle, styled} from '../styles/theme'
 
+// import { FaHeart } from 'react-icons/fa';
+import styles from "./layout.module.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
+
+import AsideComponent from "./off-canvas-sidebar/aside"
+
 const StyledNav = styled.nav`
   ul {
     list-style-type: none;
@@ -34,7 +41,8 @@ export default class Layout extends React.Component<Props> {
     return (
       <>
         <GlobalStyle />
-        <StyledNav className="navigation">
+        <AsideComponent/>
+        {/* <StyledNav className="navigation">
           <ul>
             <li>
               <Link to={`/`}>&</Link>
@@ -46,13 +54,18 @@ export default class Layout extends React.Component<Props> {
               <Link to={`/about`}>About</Link>
             </li>
           </ul>
-        </StyledNav>
-        <main className="content" role="main">
+        </StyledNav> */}
+        <main id="main" className="content" role="main">
           {children}
         </main>
         <StyledFooter className="footer">
           © {new Date().getFullYear()},{` `}
-          <a href="https://jeffrafter.com">jeffrafter.com</a>. Built with
+          <a href="https://jeffrafter.com">jeffrafter.com</a>.
+          <span>
+          <FontAwesomeIcon icon={faHeart} pulse className={styles.withLove}/>
+          {/* <FaHeart className={styles.withLove+ " faa-pulse animated"}/> */}
+          </span>
+          Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </StyledFooter>

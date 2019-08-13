@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: ximenchuixue
+ * @Date: 2019-08-10 18:24:40
+ * @LastEditTime: 2019-08-14 00:16:45
+ * @LastEditors: Please set LastEditors
+ */
 'use strict'
 
 module.exports = {
@@ -16,6 +23,12 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-less`,
+      options: {
+        strictMath: true,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
