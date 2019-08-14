@@ -1,7 +1,7 @@
 import React from 'react'
 import {AsideNavbar} from "./navbar-theme"
 import {Link} from 'gatsby'
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaDoorClosed } from 'react-icons/fa';
 
 export default class AsideComponent extends React.Component {
 
@@ -11,14 +11,21 @@ export default class AsideComponent extends React.Component {
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
   }
 
+  closeBar() {
+    document.querySelector(".sidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+  }
+
   render() {
     return (
       <>
       <AsideNavbar>
-        <div id="" className="sidenav">
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Clients</a>
+        <div className="sidenav">
+        <a className="closebtn" onClick={this.closeBar}><FaDoorClosed/></a>
+          <Link to={`/`}>&</Link>
+          <Link to={`/tags`}>Tags</Link>
+          <Link to={`/about`}>About</Link>
         </div>
 `      </AsideNavbar>
       <div onClick={this.openBar}>
