@@ -1,8 +1,6 @@
 import React from 'react'
-import {Link} from 'gatsby'
 import {GlobalStyle, styled} from '../styles/theme'
 
-// import { FaHeart } from 'react-icons/fa';
 import styles from "./layout.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
@@ -30,18 +28,18 @@ const StyledFooter = styled.footer`
   padding-bottom: 36px;
 `
 
-interface Props {
-  readonly title?: string
-}
 
-export default class Layout extends React.Component<Props> {
+export default class Layout extends React.Component {
+  state = {showNav: false};
+
   render() {
     const {children} = this.props
 
     return (
       <>
         <GlobalStyle />
-        <AsideComponent/>
+        {/* showNav 这里的作用是采用不同的navbar关闭方式，为false则可点击空白蒙板关闭 */}
+        <AsideComponent showNav = {false} />
         {/* <StyledNav className="navigation">
           <ul>
             <li>

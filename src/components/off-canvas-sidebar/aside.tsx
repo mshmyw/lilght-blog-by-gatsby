@@ -1,32 +1,47 @@
 import React from 'react'
-import {AsideNavbar} from "./navbar-theme"
+import {AsideNavbar, NavBarOverLayWrap, Nav, OverLayWrap} from "./navbar-theme"
 import {Link} from 'gatsby'
-import { FaBars } from 'react-icons/fa';
 import styles from "./aside.module.css"
 import Burger from "../burger/BurgerWrapper";
-export default class AsideComponent extends React.Component {
-  state = {
-    active: false,
-  };
+
+export interface AsideProps {
+  showNav: boolean;
+  onHideNav(): any;
+}
+
+export interface AsideState {
+  active: boolean;
+}
+
+export default class AsideComponent extends React.Component<AsideProps, AsideState> {
+  constructor(props) {
+    super(props);
+    this.hideNav = this.hideNav.bind(this);
+    this.state = {
+      active: false,
+    };
+  }
+
 
   openBar() {
-    if(document.querySelector(".sidenav")) {
-      document.querySelector(".sidenav").style.width = "250px";
-      document.getElementById("main").style.marginRight = "250px";
+      // document.getElementById("main").style.marginRight = "250px";
       document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-    }
   }
 
   closeBar() {
-    if(document.querySelector(".sidenav")) {
-      document.querySelector(".sidenav").style.width = "0";
-      document.getElementById("main").style.marginRight= "0";
+      // document.getElementById("main").style.marginRight= "0";
       document.body.style.backgroundColor = "white";
-    }
+  }
+
+  hideNav() {
+    this.setState({active: !this.state.active})
   }
 
   render() {
+    const {showNav} = this.props;
     const burger = "spin";
+    const width = this.state.active ? 250 : 0;  // sidebar width
+
     // TODO 这里的实现感觉是有问题的
     if(this.state.active) {
       this.openBar();
@@ -37,24 +52,27 @@ export default class AsideComponent extends React.Component {
 
     return (
       <>
-      <AsideNavbar>
-        <div className="sidenav">
-          {/* <a className="closebtn" onClick={this.closeBar}>
-            &times;
-            <Burger
-              burger={burger}
-              color="#0FAFFF"
-              hoverOpacity={0.8}
-              scale={1}
-              marginTop="0"
-              marginLeft="0"
-            />
-            </a> */}
-          <Link to={`/`}>&</Link>
-          <Link to={`/tags`}>Tags</Link>
-          <Link to={`/about`}>About</Link>
-        </div>
-`      </AsideNavbar>
+      {showNav ?
+      <AsideNavbar style = {{width}}>
+            <Link to={`/`}>&</Link>
+            <Link to={`/tags`}>Tags</Link>
+            <Link to={`/about`}>About</Link>
+      </AsideNavbar>
+      :
+      <NavBarOverLayWrap
+          showNav = {this.state.active}
+        >
+          <OverLayWrap
+            showNav = {this.state.active}
+            onClick={this.hideNav}></OverLayWrap>
+          <Nav showNav = {this.state.active}>
+            <Link to={`/`}>&</Link>
+            <Link to={`/tags`}>Tags</Link>
+            <Link to={`/about`}>About</Link>
+          </Nav>
+        </NavBarOverLayWrap>
+      }
+
       <div className={styles.navBarWrap} onClick={() => this.setState({active: !this.state.active})}>
         {/* <FaBars /> */}
         <Burger

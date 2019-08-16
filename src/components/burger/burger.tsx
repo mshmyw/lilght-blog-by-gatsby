@@ -1,7 +1,6 @@
 // from https://github.com/mattvox/react-css-burger
 
 import React from 'react';
-import {BurgerBoxWrap, BurgerInnerWrap, BurgerButtonWrap} from './burger-styled';
 import styles from "./burger.module.css"
 
 enum BurgerType {
