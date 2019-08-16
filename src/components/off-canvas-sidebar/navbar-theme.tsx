@@ -7,7 +7,7 @@ export const AsideNavbar = styled.div`
   position: fixed;
   z-index: 1;
   top: 0;
-  left: 0;
+  right: 0;
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
@@ -29,9 +29,18 @@ export const AsideNavbar = styled.div`
   .closebtn {
     position: absolute;
     top: 0;
-    right: 25px;
+    right: 35px;
     font-size: 36px;
     margin-left: 50px;
+    cursor: pointer;
+
+    transform: rotate(360deg);
+    transition: transform 250ms ease;
   }
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 `
