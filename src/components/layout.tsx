@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 import AsideComponent from "./off-canvas-sidebar/aside"
+import {ScrollButton} from "./scoll-button/ScrollButton";
 
 const StyledNav = styled.nav`
   ul {
@@ -55,6 +56,7 @@ export default class Layout extends React.Component {
         </StyledNav> */}
         <main id="main" className="content" role="main">
           {children}
+          <ScrollButton scrollStepInPx="50" delayInMs="16.66"/>
         </main>
         <StyledFooter className="footer">
           © {new Date().getFullYear()},{` `}
