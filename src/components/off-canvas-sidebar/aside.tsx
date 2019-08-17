@@ -1,12 +1,14 @@
 import React from 'react'
 import {AsideNavbar, NavBarOverLayWrap, Nav, OverLayWrap} from "./navbar-theme"
-import {Link} from 'gatsby'
+import {Link, graphql} from 'gatsby'
 import styles from "./aside.module.css"
 import Burger from "../burger/BurgerWrapper";
+import { ImgShow } from "./img";
 
 export interface AsideProps {
   showNav: boolean;
   onHideNav(): any;
+  readonly data?: PageQueryData
 }
 
 export interface AsideState {
@@ -38,7 +40,7 @@ export default class AsideComponent extends React.Component<AsideProps, AsideSta
   }
 
   render() {
-    const {showNav} = this.props;
+    const {showNav, data} = this.props;
     const burger = "spin";
     const width = this.state.active ? 250 : 0;  // sidebar width
 
@@ -66,6 +68,7 @@ export default class AsideComponent extends React.Component<AsideProps, AsideSta
             showNav = {this.state.active}
             onClick={this.hideNav}></OverLayWrap>
           <Nav showNav = {this.state.active}>
+            <ImgShow/>
             <Link to={`/`}>&</Link>
             <Link to={`/tags`}>Tags</Link>
             <Link to={`/about`}>About</Link>
@@ -88,3 +91,25 @@ export default class AsideComponent extends React.Component<AsideProps, AsideSta
     );
   }
 }
+
+interface PageQueryData {
+  file: {
+    childImageSharp: {
+      fluid:  {
+        originalName: string
+      }
+    }
+  }
+}
+
+export const pageQuery = graphql`
+query {
+  file(relativePath: {eq: "furby.png"}) {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        originalName
+      }
+    }
+  }
+}
+`;
