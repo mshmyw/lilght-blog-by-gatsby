@@ -1,0 +1,11 @@
+.imgWrap {
+  border: #000 solid 2px;
+  display: block;
+  margin: 12px auto 12px auto;
+  border-radius: 50%;
+  transition: all 2.0s;
+}
+
+.imgWrap:hover{
+  transform: rotate(360deg);
+}

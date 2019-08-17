@@ -7,14 +7,14 @@
 
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import styles from "./img.module.css";
 
 export const ImgShow = () => {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: {eq: "furby.png"}) {
         childImageSharp {
-          fluid(maxWidth: 1000) {
+          fluid(maxWidth: 50) {
             originalName
             src
           }
@@ -25,24 +25,15 @@ export const ImgShow = () => {
 
   const {  } = data.file.childImageSharp.fluid;
   return (
-    <div
-      style={{
-        display: `flex`,
-      }}
-    >
+    <>
       <img
-        style={{
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
-        }}
+        className={styles.imgWrap}
         src={data.file.childImageSharp.fluid.src}
         alt={data.file.childImageSharp.fluid.originalName}
       />
-      <p>
-        {` `}
-          You should follow him on Twitter
+      <p style = {{textAlign: 'center', marginTop: 0}}>
+        ximenchuixue
       </p>
-    </div>
+      </>
   )
 }
