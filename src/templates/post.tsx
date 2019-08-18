@@ -34,7 +34,8 @@ export default class PostTemplate extends React.Component<Props> {
         <article>
           <header>
             <h1>{post.frontmatter.title}</h1>
-            <p>{post.frontmatter.date}</p>
+            <p>{post.frontmatter.date} -
+            {post.fields.readingTime.text} - {post.fields.readingTime.words}</p>
           </header>
           <div className={`page-content`}>
             <div dangerouslySetInnerHTML={{__html: post.html}} />
@@ -75,6 +76,12 @@ interface PageQueryData {
       title: string
       date: string
     }
+    fields: {
+      readingTime: {
+        text: string
+        words: string
+      }
+    }
   }
 }
 
@@ -92,6 +99,12 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+      }
+      fields {
+        readingTime {
+          text
+          words
+        }
       }
     }
   }
