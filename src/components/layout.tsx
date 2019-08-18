@@ -56,7 +56,7 @@ export default class Layout extends React.Component {
         </StyledNav> */}
         <main id="main" className="content" role="main">
           {children}
-          <ScrollButton scrollStepInPx="50" delayInMs="16.66"/>
+          <ScrollButton />
         </main>
         <StyledFooter className="footer">
           © {new Date().getFullYear()},{` `}
