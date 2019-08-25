@@ -79,3 +79,20 @@ exports.onCreateNode = ({node, actions, getNode}) => {
     })
   }
 }
+
+// Debugging HTML Builds
+// https://www.gatsbyjs.org/docs/debugging-html-builds/
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /bad-module/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}

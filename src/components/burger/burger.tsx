@@ -33,25 +33,13 @@ export default class Burger extends React.Component<BurgerProps> {
   };
 
   render() {
-    // https://www.gatsbyjs.org/docs/debugging-html-builds/
-    // const root = document.documentElement;
     const {
       active,
       onClick,
       burger,
-      color,
-      hoverOpacity,
-      scale,
-      marginTop,
-      marginLeft,
       style,
     } = this.props;
 
-    // root.style.setProperty('--burger-color', color);
-    // root.style.setProperty('--burger-opacity-hover', hoverOpacity);
-    // root.style.setProperty('--burger-scale', scale as any);
-    // root.style.setProperty('--burger-margin-top', marginTop);
-    // root.style.setProperty('--burger-margin-left', marginLeft);
     const convertDict = {
       spin: styles.hamburgerSpin,
       spring: styles.hamburgerSpring,

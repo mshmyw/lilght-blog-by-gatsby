@@ -5,7 +5,7 @@ import styles from "./layout.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
-import AsideComponent from "./off-canvas-sidebar/aside"
+import {AsideComponent} from "./off-canvas-sidebar/aside"
 import {ScrollButton} from "./scoll-button/ScrollButton";
 
 const StyledNav = styled.nav`

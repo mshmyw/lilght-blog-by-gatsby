@@ -1,41 +1,33 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import { FaArrowUp } from "react-icons/fa";
 
-export class ScrollButton extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      hasScrolled: false }
+export const ScrollButton = () => {
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  const onScroll = () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    setHasScrolled(scrollTop > 200); // 距离视图顶部200时，出现”back Top“ 按钮
   }
 
-  componentDidMount() {
-    // TODO https://www.gatsbyjs.org/docs/debugging-html-builds/
-    // window.addEventListener('scroll', this.onScroll)
+  useEffect(()=> {
+    window.addEventListener('scroll', onScroll)
+  }, []);
+
+
+  const scrollToTop = () => {
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox
   }
 
-  onScroll = () => {
-    // TODO https://www.gatsbyjs.org/docs/debugging-html-builds/
-    // const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    // this.setState({ hasScrolled: scrollTop > 200 });  // 距离视图顶部200时，出现”back Top“ 按钮
-  }
-
-  scrollToTop = () => {
-    // TODO https://www.gatsbyjs.org/docs/debugging-html-builds/
-    // document.documentElement.scrollTop = 0; // For Chrome, Firefox
-  }
-
-  render() {
     return (
       <>
-        {this.state.hasScrolled && (
-          <ScrollToTopIconContainer onClick={this.scrollToTop}>
+        {hasScrolled && (
+          <ScrollToTopIconContainer onClick={scrollToTop}>
             <Button><FaArrowUp/></Button>
           </ScrollToTopIconContainer>
         )}
       </>
-    )
-  }
+    );
 }
 
 const ScrollToTopIconContainer = styled.div`
@@ -66,8 +58,8 @@ const Button = styled.div`
   color: white;
   font-family: Teko;
   font-size: 16px;
-  line-height: 30px;
   border-radius: 50%;
   width: 40px;
-  padding-top: 4px;
+  height: 40px;
+  padding-top: 11px;
 `

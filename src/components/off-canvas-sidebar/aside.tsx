@@ -1,6 +1,6 @@
 // from https://github.com/gauravchl/react-simple-sidenav
 
-import React from 'react'
+import React, {useState} from 'react'
 import {AsideNavbar, NavBarOverLayWrap, Nav, OverLayWrap} from "./navbar-theme"
 import {Link, graphql} from 'gatsby'
 import styles from "./aside.module.css"
@@ -13,46 +13,16 @@ export interface AsideProps {
   readonly data?: PageQueryData
 }
 
-export interface AsideState {
-  active: boolean;
-}
+export const AsideComponent = (props: AsideProps) => {
+  const [active, setActive] = useState(false);
 
-export default class AsideComponent extends React.Component<AsideProps, AsideState> {
-  constructor(props) {
-    super(props);
-    this.hideNav = this.hideNav.bind(this);
-    this.state = {
-      active: false,
-    };
+  const hideNav = () => {
+    setActive(!active);
   }
 
-
-  openBar() {
-       // TODO useEffect
-      // document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-  }
-
-  closeBar() {
-       // TODO useEffect
-      // document.body.style.backgroundColor = "white";
-  }
-
-  hideNav() {
-    this.setState({active: !this.state.active})
-  }
-
-  render() {
-    const {showNav, data} = this.props;
+    const {showNav} = props;
     const burger = "spin";
-    const width = this.state.active ? 250 : 0;  // sidebar width
-
-    // TODO 这里的实现感觉是有问题的
-    if(this.state.active) {
-      this.openBar();
-    }
-    if(!this.state.active) {
-      this.closeBar();
-    }
+    const width = active ? 250 : 0;  // sidebar width
 
     return (
       <>
@@ -64,12 +34,12 @@ export default class AsideComponent extends React.Component<AsideProps, AsideSta
       </AsideNavbar>
       :
       <NavBarOverLayWrap
-          showNav = {this.state.active}
+          showNav = {active}
         >
           <OverLayWrap
-            showNav = {this.state.active}
-            onClick={this.hideNav}></OverLayWrap>
-          <Nav showNav = {this.state.active}>
+            showNav = {active}
+            onClick={hideNav}></OverLayWrap>
+          <Nav showNav = {active}>
             <ImgShow/>
             <Link to={`/`}>&</Link>
             <Link to={`/tags`}>Tags</Link>
@@ -78,7 +48,7 @@ export default class AsideComponent extends React.Component<AsideProps, AsideSta
         </NavBarOverLayWrap>
       }
 
-      <div className={styles.navBarWrap} onClick={() => this.setState({active: !this.state.active})}>
+      <div className={styles.navBarWrap} onClick={() => {setActive(!active)}}>
         {/* <FaBars /> */}
         <Burger
           burger={burger}
@@ -91,7 +61,6 @@ export default class AsideComponent extends React.Component<AsideProps, AsideSta
       </div>
       </>
     );
-  }
 }
 
 interface PageQueryData {
