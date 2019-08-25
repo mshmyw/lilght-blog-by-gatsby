@@ -10,16 +10,19 @@ export class ScrollButton extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.onScroll)
+    // TODO https://www.gatsbyjs.org/docs/debugging-html-builds/
+    // window.addEventListener('scroll', this.onScroll)
   }
 
   onScroll = () => {
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    this.setState({ hasScrolled: scrollTop > 200 });  // 距离视图顶部200时，出现”back Top“ 按钮
+    // TODO https://www.gatsbyjs.org/docs/debugging-html-builds/
+    // const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    // this.setState({ hasScrolled: scrollTop > 200 });  // 距离视图顶部200时，出现”back Top“ 按钮
   }
 
   scrollToTop = () => {
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox
+    // TODO https://www.gatsbyjs.org/docs/debugging-html-builds/
+    // document.documentElement.scrollTop = 0; // For Chrome, Firefox
   }
 
   render() {

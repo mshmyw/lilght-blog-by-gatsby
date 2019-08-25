@@ -28,13 +28,13 @@ export default class AsideComponent extends React.Component<AsideProps, AsideSta
 
 
   openBar() {
-      // document.getElementById("main").style.marginRight = "250px";
-      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+       // TODO useEffect
+      // document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
   }
 
   closeBar() {
-      // document.getElementById("main").style.marginRight= "0";
-      document.body.style.backgroundColor = "white";
+       // TODO useEffect
+      // document.body.style.backgroundColor = "white";
   }
 
   hideNav() {
