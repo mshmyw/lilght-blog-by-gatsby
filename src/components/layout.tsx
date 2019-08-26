@@ -55,7 +55,7 @@ export default class Layout extends React.Component {
           </ul>
         </StyledNav> */}
         <main id="main" className="content" role="main">
-        <img src="http://39.108.57.183:8020/api/v1/count/tag.svg" alt="Hits"/>
+        <img src="http://39.108.57.183:8020/api/v1/count/tag.svg?url=http%3A%2F%2Fblog.angelxiang.com" alt="Hits"/>
           {children}
           <ScrollButton />
         </main>
