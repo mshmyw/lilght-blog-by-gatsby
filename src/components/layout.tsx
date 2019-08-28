@@ -7,7 +7,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 import {AsideComponent} from "./off-canvas-sidebar/aside"
 import {ScrollButton} from "./scoll-button/ScrollButton";
-
+import SvgComponent from "./icons/heart"
 const StyledNav = styled.nav`
   ul {
     list-style-type: none;
@@ -63,8 +63,7 @@ export default class Layout extends React.Component {
           © {new Date().getFullYear()},{` `}
           <a href="https://jeffrafter.com">jeffrafter.com</a>.
           <span>
-          <FontAwesomeIcon icon={faHeart} pulse className={styles.withLove}/>
-          {/* <FaHeart className={styles.withLove+ " faa-pulse animated"}/> */}
+          <SvgComponent/>
           </span>
           Built with
           {` `}

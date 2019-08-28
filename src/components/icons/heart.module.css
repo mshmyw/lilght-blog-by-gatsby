@@ -1,0 +1,17 @@
+.icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+}
+
+.footerIcon {
+  animation: heartAnimate 1.33s ease-in-out infinite;
+  fill: #f06292;
+  margin: 0 0.5em 0.3em;
+}
+  @keyframes heartAnimate {
+    0%,100%{transform:scale(1);}
+    10%,30%{transform:scale(0.9);}
+    20%,40%,60%,80%{transform:scale(1.1);}
+    50%,70%{transform:scale(1.1);}
+}
