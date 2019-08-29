@@ -11,10 +11,10 @@ module.exports = {
   siteMetadata: {
     title: '道法自然 万物皆在时空',
     description: 'blog for xiang and me',
-    siteUrl: 'http://blog.angelxiang.com',
+    siteUrl: 'https://blog.angelxiang.com',
     author: {
       name: 'chuixue ximen',
-      url: 'http://blog.angelxiang.com',
+      url: 'https://blog.angelxiang.com',
       email: 'mshmayoushi@gmail.com',
     },
     social: {
