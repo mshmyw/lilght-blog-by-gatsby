@@ -93,7 +93,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `http://blog.angelxiang.com`,
+        siteUrl: `https://blog.angelxiang.com`,
       },
     },
     {
