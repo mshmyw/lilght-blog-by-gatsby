@@ -114,15 +114,16 @@ module.exports = {
         // trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-fathom',
-      options: {
-        // Fathom server URL. Defaults to `cdn.usefathom.com`
-        trackingUrl: 'localhost:8080',
-        // Unique site id
-        siteId: 'FATHOM_SITE_ID'
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-fathom',
+    //   options: {
+    //     // Fathom server URL. Defaults to `cdn.usefathom.com`
+    //     trackingUrl: 'tracking.eksma.xyz',
+    //     // trackingUrl: 'localhost:8080',
+    //     // Unique site id
+    //     siteId: 'FATHOM_SITE_ID'
+    //   }
+    // },
     `gatsby-remark-reading-time`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
