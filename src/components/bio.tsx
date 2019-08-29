@@ -21,7 +21,7 @@ export default function() {
             siteMetadata {
               description
               social {
-                twitter
+                zhihu
               }
             }
           }

@@ -93,14 +93,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://jeffrafter.com`,
+        siteUrl: `http://blog.angelxiang.com`,
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Jeff Rafter`,
-        short_name: `jeffrafter.com`,
+        name: `chuixue ximen`,
+        short_name: `blog.angelxiang.com`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
