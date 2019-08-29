@@ -103,8 +103,8 @@ export default class Head extends React.Component<Props> {
                   o.async=1; o.src=t; o.id='fathom-script';
                   m.parentNode.insertBefore(o,m)
                 })(document, window, '//tracking.eksma.xyz/tracker.js', 'fathom');
-                // fathom('set', 'siteId', 'CSMTR');
-                fathom('set', 'siteId', 'PTHSA');
+                // fathom('set', 'siteId', 'CSMTR');  // localhost:8000
+                fathom('set', 'siteId', 'PTHSA'); // blog.angelxiang.com
                 fathom('trackPageview');`
               }
               </script>
