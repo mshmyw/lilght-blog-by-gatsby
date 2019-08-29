@@ -9,17 +9,17 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'Example',
-    description: 'This is an example site I made.',
-    siteUrl: 'https://example.com',
+    title: '道法自然 万物皆在时空',
+    description: 'blog for xiang and me',
+    siteUrl: 'http://blog.angelxiang.com',
     author: {
-      name: 'Jeff Rafter',
-      url: 'https://twitter.com/jeffrafter',
-      email: 'jeffrafter@gmail.com',
+      name: 'chuixue ximen',
+      url: 'http://blog.angelxiang.com',
+      email: 'mshmayoushi@gmail.com',
     },
     social: {
-      twitter: 'https://twitter.com/jeffrafter',
-      github: 'https://github.com/jeffrafter',
+      zhihu: 'https://zhihu.com/ximenchuixue',
+      github: 'https://github.com/mshmyw',
     },
   },
   plugins: [
@@ -113,6 +113,15 @@ module.exports = {
       options: {
         // trackingId: `ADD YOUR TRACKING ID HERE`,
       },
+    },
+    {
+      resolve: 'gatsby-plugin-fathom',
+      options: {
+        // Fathom server URL. Defaults to `cdn.usefathom.com`
+        trackingUrl: 'localhost:8080',
+        // Unique site id
+        siteId: 'FATHOM_SITE_ID'
+      }
     },
     `gatsby-remark-reading-time`,
     `gatsby-plugin-react-helmet`,

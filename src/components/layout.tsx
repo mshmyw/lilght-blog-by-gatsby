@@ -61,7 +61,8 @@ export default class Layout extends React.Component {
         </main>
         <StyledFooter className="footer">
           © {new Date().getFullYear()},{` `}
-          <a href="https://jeffrafter.com">jeffrafter.com</a>.
+          {/* https://jeffrafter.com */}
+          <a href="http://blog.angelxiang.com"></a>.
           <span>
           <SvgComponent/>
           </span>
