@@ -68,7 +68,9 @@ export default class Layout extends React.Component {
           </span>
           Built with
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://www.gatsbyjs.org">Gatsby</a>.
+          {` `} analytics
+          <a href="https://tracking.eksma.xyz"> 用户分析</a>
         </StyledFooter>
       </>
     )
