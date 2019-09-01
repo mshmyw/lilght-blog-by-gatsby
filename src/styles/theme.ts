@@ -199,7 +199,7 @@ a {
 }
 
 a:hover {
-  box-shadow: 0 1px 0 0 currentColor;
+  color: #e58c7c;
 }
 
 img {
