@@ -187,7 +187,19 @@ figure.fullwidth figcaption {
 
 a:link,
 a:visited {
-  color: inherit;
+  color: #03a9f4;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+a {
+  color: #03a9f4;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+a:hover {
+  box-shadow: 0 1px 0 0 currentColor;
 }
 
 img {
