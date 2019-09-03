@@ -67,6 +67,7 @@ body {
 }
 
 h1 {
+  font-family: 'Fira Sans', sans-serif;
   font-weight: 400;
   margin-top: 4rem;
   margin-bottom: 1.5rem;
@@ -75,6 +76,7 @@ h1 {
 }
 
 h2 {
+  font-family: 'Fira Sans', sans-serif;
   font-style: italic;
   font-weight: 400;
   margin-top: 2.1rem;
@@ -90,6 +92,11 @@ h3 {
   margin-top: 2rem;
   margin-bottom: 1.4rem;
   line-height: 1;
+}
+
+.react-toggle--checked .react-toggle-track,
+.react-toggle--checked:hover .react-toggle-track {
+     background-color: #000000;
 }
 
 hr {

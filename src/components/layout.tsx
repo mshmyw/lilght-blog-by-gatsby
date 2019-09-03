@@ -1,10 +1,11 @@
 import React from 'react'
-import {GlobalStyle, styled} from '../styles/theme'
+import {GlobalStyle, styled} from '../styles/GlobalStyle'
 import "./layout.css"
 
 import {AsideComponent} from "./off-canvas-sidebar/aside"
 import {ScrollButton} from "./scoll-button/ScrollButton";
 import SvgComponent from "./icons/heart"
+
 
 const StyledFooter = styled.footer`
   padding-bottom: 36px;
@@ -22,7 +23,6 @@ export default class Layout extends React.Component {
         {/* showNav 这里的作用是采用不同的navbar关闭方式，为false则可点击空白蒙板关闭 */}
         <AsideComponent showNav = {false} />
         <main id="main" className="content" role="main">
-        <img src="http://39.108.57.183:8020/api/v1/count/tag.svg?url=http%3A%2F%2Fblog.angelxiang.com" alt="Hits"/>
           {children}
           <ScrollButton />
         </main>
@@ -38,6 +38,9 @@ export default class Layout extends React.Component {
           <a href="https://www.gatsbyjs.org">Gatsby</a>.
           {` `} analytics
           <a href="https://tracking.eksma.xyz"> 用户分析</a>
+          <span>
+          <img src="http://39.108.57.183:8020/api/v1/count/tag.svg?url=http%3A%2F%2Fblog.angelxiang.com" alt="Hits"/>
+          </span>
         </StyledFooter>
       </>
     )
