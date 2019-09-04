@@ -1,48 +1,44 @@
 import React from 'react'
-import {GlobalStyle, styled} from '../styles/GlobalStyle'
+import { styled } from '../styles/GlobalStyle'
 import "./layout.css"
 
-import {AsideComponent} from "./off-canvas-sidebar/aside"
-import {ScrollButton} from "./scoll-button/ScrollButton";
-import SvgComponent from "./icons/heart"
+import { AsideComponent } from "./off-canvas-sidebar/aside"
+import { ScrollButton } from "./scoll-button/ScrollButton";
+import { Footer } from "./footer/Footer";
+import {Header} from "./toggle/header";
 
 
-const StyledFooter = styled.footer`
-  padding-bottom: 36px;
-`
+export const Layout = (props: any) => {
+  const { children } = props;
 
-export default class Layout extends React.Component {
-  state = {showNav: false};
+  const Container = styled.div`
+    color: ${({ theme }) => theme.color};
+    background-color: ${({ theme }) => theme.bg};
+    min-height: 100vh;
+    `
 
-  render() {
-    const {children} = this.props
-
-    return (
-      <>
-        <GlobalStyle />
-        {/* showNav 这里的作用是采用不同的navbar关闭方式，为false则可点击空白蒙板关闭 */}
-        <AsideComponent showNav = {false} />
-        <main id="main" className="content" role="main">
-          {children}
-          <ScrollButton />
-        </main>
-        <StyledFooter className="footer">
-          © {new Date().getFullYear()},{` `}
-          {/* https://jeffrafter.com */}
-          <a href="https://blog.angelxiang.com">blog.angelxiang.com</a>.
-          <span>
-          <SvgComponent/>
-          </span>
-          Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>.
-          {` `} analytics
-          <a href="https://tracking.eksma.xyz"> 用户分析</a>
-          <span>
-          <img src="http://39.108.57.183:8020/api/v1/count/tag.svg?url=http%3A%2F%2Fblog.angelxiang.com" alt="Hits"/>
-          </span>
-        </StyledFooter>
-      </>
-    )
-  }
+  return (
+    <>
+      {/* <GlobalStyle /> */}
+      {/* showNav 这里的作用是采用不同的navbar关闭方式，为false则可点击空白蒙板关闭 */}
+      <AsideComponent showNav={false} />
+      <Container>
+        <Header siteTitle={"MxM"} />
+        <div
+          style={{
+            margin: `0 auto`,
+            maxWidth: 960,
+            padding: `0px 1.0875rem 1.45rem`,
+            paddingTop: 0,
+          }}
+        >
+          <main id="main" role="main">
+            {children}
+            <ScrollButton />
+          </main>
+          <Footer />
+        </div>
+      </Container>
+    </>
+  )
 }

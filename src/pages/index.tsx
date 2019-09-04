@@ -1,11 +1,9 @@
 import React from 'react'
 import {Link, graphql} from 'gatsby'
 
-import Layout from '../components/layout'
+import {Layout} from '../components/layout'
 import Head from '../components/head'
 import Bio from '../components/bio'
-
-import Header from '../components/toggle/header'
 
 interface Props {
   readonly data: PageQueryData
@@ -19,11 +17,10 @@ export default class Index extends React.Component<Props> {
 
     return (
       <Layout title={siteTitle}>
-        <Header />
-        <Head title="All posts" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+        <Head title="All posts" keywords={[`blog`, `gatsby`, `ts`, `react`]} />
         <Bio />
         <article>
-          <div className={`page-content`}>
+          <div>
             {posts.map(({node}) => {
               const title = node.frontmatter.title || node.fields.slug
               return (

@@ -1,0 +1,12 @@
+.footerWrapper {
+  display: flex;
+}
+
+.aWrapper {
+  margin-left: 5px;
+}
+
+.imgWrapper {
+  margin-left: 5px;
+    margin-top: -2px;
+}

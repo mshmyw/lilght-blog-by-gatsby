@@ -1,12 +1,12 @@
 const lightTheme = {
   bg: "white",
-  bgDark: "pink",
+  bgDark: "lightyellow",
   color: "black",
   accent: "blue",
 }
 
 const darkTheme = {
-  bg: "#2c1320",
+  bg: "#282c35",
   bgDark: "#15090f",
   color: "white",
   accent: "#ef86a9",

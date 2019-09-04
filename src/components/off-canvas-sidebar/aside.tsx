@@ -9,7 +9,7 @@ import { ImgShow } from "./img";
 
 export interface AsideProps {
   showNav: boolean;
-  onHideNav(): any;
+  onHideNav?(): any;
   readonly data?: PageQueryData
 }
 

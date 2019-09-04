@@ -20,7 +20,7 @@ const Container = styled.header`
   }
 `
 
-const Header = ({ siteTitle }) => {
+export const Header = ({ siteTitle }) => {
   const { theme, toggleTheme } = useTheme()
   return (
     <Container>
@@ -29,10 +29,13 @@ const Header = ({ siteTitle }) => {
           margin: `0 auto`,
           maxWidth: 960,
           padding: `1.45rem 1.0875rem`,
+          display: `flex`,
+          justifyContent: `space-between`,
+          alignItems: `center`,
         }}
       >
-        <h1 style={{ margin: 0 }}>
-          <Link to="/">{siteTitle}</Link>
+        <h1 style={{ margin: 0  }}>
+          <Link to="/" style={{color: `#03a9f4`}}>{siteTitle}</Link>
         </h1>
         <Toggle
           defaultChecked={theme === "dark" ? true : false}
@@ -64,5 +67,3 @@ const Header = ({ siteTitle }) => {
     </Container>
   )
 }
-
-export default Header

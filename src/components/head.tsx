@@ -67,22 +67,6 @@ export default class Head extends React.Component<Props> {
                   property: `og:type`,
                   content: `website`,
                 },
-                {
-                  name: `twitter:card`,
-                  content: `summary`,
-                },
-                {
-                  name: `twitter:creator`,
-                  content: data.site.siteMetadata.author.name,
-                },
-                {
-                  name: `twitter:title`,
-                  content: title,
-                },
-                {
-                  name: `twitter:description`,
-                  content: metaDescription,
-                },
               ].concat(
                 keywords.length > 0
                   ? {
@@ -92,6 +76,7 @@ export default class Head extends React.Component<Props> {
                   : [],
               )}
             >
+
               <script>
               {
                   `(function(f, a, t, h, o, m){
