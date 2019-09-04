@@ -9,8 +9,8 @@
 
 module.exports = {
   siteMetadata: {
-    title: '道法自然 万物皆在时空',
-    description: 'blog for xiang and me',
+    title: 'MxM',
+    description: '道法自然 万物皆在时空',
     siteUrl: 'https://blog.angelxiang.com',
     author: {
       name: 'chuixue ximen',

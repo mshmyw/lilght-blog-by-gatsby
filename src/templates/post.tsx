@@ -13,13 +13,11 @@ interface Props {
   }
 }
 
-const StyledUl = styled('ul')`
-  list-style-type: none;
-
-  li::before {
-    content: '' !important;
-    padding-right: 0 !important;
-  }
+const StyledDiv = styled('div')`
+  font-size: 1.4rem;
+  line-height: 2rem;
+  display: flex;
+  justify-content: space-between;
 `
 
 export default class PostTemplate extends React.Component<Props> {
@@ -39,22 +37,22 @@ export default class PostTemplate extends React.Component<Props> {
           </header>
           <div className={`page-content`}>
             <div dangerouslySetInnerHTML={{__html: post.html}} />
-            <StyledUl>
+            <StyledDiv>
               {previous && (
-                <li>
+                <span>
                   <Link to={previous.fields.slug} rel="prev">
                     ← {previous.frontmatter.title}
                   </Link>
-                </li>
+                </span>
               )}
               {next && (
-                <li>
+                <span>
                   <Link to={next.fields.slug} rel="next">
                     {next.frontmatter.title} →
                   </Link>
-                </li>
+                </span>
               )}
-            </StyledUl>
+            </StyledDiv>
           </div>
         </article>
       </Layout>

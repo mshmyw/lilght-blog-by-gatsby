@@ -111,7 +111,7 @@ hr {
 
 article {
   position: relative;
-  padding: 5rem 0rem;
+  padding: 0rem 0 2rem 0;
 }
 
 section {
