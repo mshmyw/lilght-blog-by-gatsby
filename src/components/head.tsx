@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import {StaticQuery, graphql} from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
 type StaticQueryData = {
   site: {
@@ -14,72 +14,59 @@ type StaticQueryData = {
   }
 }
 
-interface Props {
-  readonly title: string
-  readonly description?: string
-  readonly lang?: string
-  readonly keywords?: string[]
+interface HeadProps {
+title: string
+description?: string
+keywords?: string[]
 }
 
-export default class Head extends React.Component<Props> {
-  render() {
-    return (
-      <StaticQuery
-        query={graphql`
-          query {
-            site {
-              siteMetadata {
-                title
-                description
-                author {
-                  name
-                }
-              }
-            }
+export const Head = (props: HeadProps) => {
+  const data: StaticQueryData = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          author {
+            name
           }
-        `}
-        render={(data: StaticQueryData) => {
-          const metaDescription = this.props.description || data.site.siteMetadata.description
-          const lang = this.props.lang || 'en'
-          const title = this.props.title
-          const keywords = this.props.keywords || []
-          return (
-            <Helmet
-              htmlAttributes={{
-                lang,
-              }}
-              title={title}
-              titleTemplate={`%s | ${data.site.siteMetadata.title}`}
-              meta={[
-                {
-                  name: `description`,
-                  content: metaDescription,
-                },
-                {
-                  property: `og:title`,
-                  content: title,
-                },
-                {
-                  property: `og:description`,
-                  content: metaDescription,
-                },
-                {
-                  property: `og:type`,
-                  content: `website`,
-                },
-              ].concat(
-                keywords.length > 0
-                  ? {
-                      name: `keywords`,
-                      content: keywords.join(`, `),
-                    }
-                  : [],
-              )}
-            >
+        }
+      }
+    }`);
+  const {title, keywords, description} = props
+  const metaDescription = description || data.site.siteMetadata.description
+  const lang = 'en'
 
-              <script>
-              {
-                  `(function(f, a, t, h, o, m){
+  return (
+    <Helmet
+      htmlAttributes={{ lang, }}
+      title={title}
+      titleTemplate={`%s | ${title}`}
+      meta={[
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:title`,
+          content: title,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+      ].concat(
+        keywords && keywords.length > 0
+          ? {
+            name: `keywords`,
+            content: keywords.join(`, `),
+          }
+          : [],
+      )}
+    >
+      <script>
+        {
+          `(function(f, a, t, h, o, m){
                   a[h]=a[h]||function(){
                     (a[h].q=a[h].q||[]).push(arguments)
                   };
@@ -91,12 +78,8 @@ export default class Head extends React.Component<Props> {
                 // fathom('set', 'siteId', 'CSMTR');  // localhost:8000
                 fathom('set', 'siteId', 'PTHSA'); // blog.angelxiang.com
                 fathom('trackPageview');`
-              }
-              </script>
-            </Helmet>
-          )
-        }}
-      />
-    )
-  }
+        }
+      </script>
+    </Helmet>
+  )
 }

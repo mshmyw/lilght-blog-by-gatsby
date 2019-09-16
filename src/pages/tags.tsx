@@ -1,16 +1,15 @@
 import React from 'react'
 import {Link, graphql} from 'gatsby'
 
-import Layout from '../components/layout'
-import Head from '../components/head'
+import {Layout} from '../components/layout'
+import {Head} from '../components/Head'
 
 interface Props {
   readonly data: PageQueryData
 }
 
-export default class Tags extends React.Component<Props> {
-  render() {
-    const {data} = this.props
+export default (props: Props) => {
+    const {data} = props
     const siteTitle = data.site.siteMetadata.title
     const group = data.allMarkdownRemark.group
 
@@ -39,7 +38,6 @@ export default class Tags extends React.Component<Props> {
       </Layout>
     )
   }
-}
 
 interface PageQueryData {
   site: {

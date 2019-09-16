@@ -1,8 +1,8 @@
 import React from 'react'
 import {Link, graphql} from 'gatsby'
 
-import Layout from '../components/layout'
-import Head from '../components/head'
+import {Layout} from '../components/layout'
+import {Head} from '../components/Head'
 
 interface Props {
   readonly data: PageQueryData

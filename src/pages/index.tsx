@@ -2,16 +2,15 @@ import React from 'react'
 import {Link, graphql} from 'gatsby'
 
 import {Layout} from '../components/layout'
-import Head from '../components/head'
+import {Head} from '../components/Head'
 // import Bio from '../components/bio'
 
 interface Props {
   readonly data: PageQueryData
 }
 
-export default class Index extends React.Component<Props> {
-  render() {
-    const {data} = this.props
+export default (props: Props) => {
+    const {data} = props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
 
@@ -37,7 +36,6 @@ export default class Index extends React.Component<Props> {
       </Layout>
     )
   }
-}
 
 interface PageQueryData {
   site: {

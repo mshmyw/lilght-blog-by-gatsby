@@ -1,16 +1,15 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 
-import Layout from '../components/layout'
-import Head from '../components/head'
+import {Layout} from '../components/layout'
+import {Head} from '../components/Head'
 
 interface Props {
   readonly data: PageQueryData
 }
 
-export default class NotFoundPage extends React.Component<Props> {
-  render() {
-    const {data} = this.props
+export const NotFoundPage = (props: Props) => {
+    const {data} = props
     const siteTitle = data.site.siteMetadata.title
 
     return (
@@ -21,7 +20,6 @@ export default class NotFoundPage extends React.Component<Props> {
       </Layout>
     )
   }
-}
 
 interface PageQueryData {
   site: {

@@ -1,17 +1,16 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 
-import Layout from '../components/layout'
-import Head from '../components/head'
+import {Layout} from '../components/layout'
+import {Head} from '../components/Head'
 import TypedComponent from '../components/typedwriter/typed'
 
 interface Props {
   readonly data: PageQueryData
 }
 
-export default class Tags extends React.Component<Props> {
-  render() {
-    const {data} = this.props
+export default (props: Props) => {
+    const {data} = props
     const siteTitle = data.site.siteMetadata.title
 
     return (
@@ -30,7 +29,6 @@ export default class Tags extends React.Component<Props> {
       </Layout>
     )
   }
-}
 
 interface PageQueryData {
   site: {

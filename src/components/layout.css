@@ -30,7 +30,7 @@
  */
 .gatsby-highlight pre[class*="language-"] {
   padding-left: 2.8em;
-  /* background-color: transparent; */
+  background-color: transparent;
   /* margin: 0; */
   /* padding: 0; */
   /* overflow: initial; */
@@ -38,4 +38,8 @@
   /* float: left; */
   /* 2 */
   /* min-width: 100%;  */
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection, code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  background: #dad9d9;
 }

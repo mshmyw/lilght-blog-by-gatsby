@@ -1,5 +1,6 @@
 .footerWrapper {
   display: flex;
+  justify-content: center;
 }
 
 .aWrapper {

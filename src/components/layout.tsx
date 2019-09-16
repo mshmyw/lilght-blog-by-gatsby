@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled } from '../styles/GlobalStyle'
+import styled  from 'styled-components'
 import "./layout.css"
 
 import { useStaticQuery, graphql } from "gatsby";
@@ -8,7 +8,6 @@ import { AsideComponent } from "./off-canvas-sidebar/aside"
 import { ScrollButton } from "./scoll-button/ScrollButton";
 import { Footer } from "./footer/Footer";
 import {Header} from "./toggle/header";
-
 
 export const Layout = (props: any) => {
   const data = useStaticQuery(graphql`
@@ -30,7 +29,6 @@ export const Layout = (props: any) => {
 
   return (
     <>
-      {/* <GlobalStyle /> */}
       {/* showNav 这里的作用是采用不同的navbar关闭方式，为false则可点击空白蒙板关闭 */}
       <AsideComponent showNav={false} />
       <Container>
