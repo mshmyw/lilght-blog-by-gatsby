@@ -7,3 +7,6 @@
 - https://hitcounter.pythonanywhere.com/
 # 部署 netlify
 - blog.angelxiang.com
+
+# thks
+- netlify
