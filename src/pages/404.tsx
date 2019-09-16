@@ -8,7 +8,7 @@ interface Props {
   readonly data: PageQueryData
 }
 
-export const NotFoundPage = (props: Props) => {
+export default (props: Props) => {
     const {data} = props
     const siteTitle = data.site.siteMetadata.title
 

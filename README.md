@@ -5,3 +5,5 @@
 
 # 引用
 - https://hitcounter.pythonanywhere.com/
+# 部署 netlify
+- blog.angelxiang.com
