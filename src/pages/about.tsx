@@ -2,7 +2,7 @@ import React from 'react'
 import {graphql} from 'gatsby'
 
 import {Layout} from '../components/layout'
-import {Head} from '../components/Head'
+import {Head} from '../components/head'
 import TypedComponent from '../components/typedwriter/typed'
 
 interface Props {
