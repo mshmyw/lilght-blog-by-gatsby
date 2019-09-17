@@ -2,7 +2,7 @@ import React from 'react'
 import {graphql} from 'gatsby'
 
 import {Layout} from '../components/layout'
-import {Head} from '../components/head'
+import {Header} from '../components/header'
 import TypedComponent from '../components/typedwriter/typed'
 
 interface Props {
@@ -15,7 +15,7 @@ export default (props: Props) => {
 
     return (
       <Layout title={siteTitle}>
-        <Head title="All tags" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+        <Header title="All tags" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
         <article>
           <p id="element">
           About Me...

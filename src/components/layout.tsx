@@ -8,7 +8,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { AsideComponent } from "./off-canvas-sidebar/aside"
 import { ScrollButton } from "./scoll-button/ScrollButton";
 import { Footer } from "./footer/Footer";
-import {Header} from "./toggle/header";
+import {ToggleWrapper} from "./toggle/ToggleWrapper";
 
 export const Layout = (props: any) => {
   const data = useStaticQuery(graphql`
@@ -33,7 +33,7 @@ export const Layout = (props: any) => {
       {/* showNav 这里的作用是采用不同的navbar关闭方式，为false则可点击空白蒙板关闭 */}
       <AsideComponent showNav={false} />
       <Container>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <ToggleWrapper siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
             margin: `0 auto`,

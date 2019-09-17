@@ -2,7 +2,7 @@ import React from 'react'
 import {graphql} from 'gatsby'
 
 import {Layout} from '../components/layout'
-import {Head} from '../components/head'
+import {Header} from '../components/header'
 
 interface Props {
   readonly data: PageQueryData
@@ -14,7 +14,7 @@ export default (props: Props) => {
 
     return (
       <Layout title={siteTitle}>
-        <Head title="404: Not Found" />
+        <Header title="404: Not Found" />
         <h1>Not Found</h1>
         <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
       </Layout>

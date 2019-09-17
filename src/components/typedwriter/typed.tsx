@@ -1,29 +1,35 @@
-import React from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import Typed from "typed.js"
 import styles from "./typed.module.css"
 
-export default class TypedComponent extends React.Component {
-  componentDidMount() {
+interface TypedComponentProps {
+  strings: string[];
+}
+
+const TypedComponent = (props: TypedComponentProps) => {
+  const { strings } = props;
+  const inputEl = useRef(null);
+  const [typed, setTyped] = useState(null);
+  useEffect(()=> {
   	// If you want to pass more options as props, simply add
     // your desired props to this destructuring assignment.
-    const { strings } = this.props;
     // You can pass other options here, such as typing speed, back speed, etc.
     const options = {
-    	strings: strings,
+    	strings,
       typeSpeed: 50,
       backSpeed: 50
     };
     // this.el refers to the <span> in the render() method
-    this.typed = new Typed(this.el, options);
-  }
-
-  componentWillUnmount() {
+    const typedObj = new Typed(inputEl.current, options);
+    setTyped(typedObj);
+    return () => {
   	// Make sure to destroy Typed instance on unmounting
     // to prevent memory leaks
-    this.typed.destroy();
-  }
+    typed && typed.destroy();
+    }
+  }, [strings]);
 
-  render() {
+
     return (
       <div className="wrap">
         <div className="type-wrap">
@@ -33,14 +39,13 @@ export default class TypedComponent extends React.Component {
             <div className={styles.textBody}>
               $ <span
                   style={{ whiteSpace: 'pre' }}
-                  ref={(el) => { this.el = el; }}
+                  ref={inputEl}
                 />
             </div>
         </div>
         </div>
-        <button onClick={() => this.typed.toggle()}>Toggle</button>
-        <button onClick={() => this.typed.reset()}>Reset</button>
       </div>
     );
   }
-}
+
+export default TypedComponent

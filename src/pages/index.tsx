@@ -2,7 +2,7 @@ import React from 'react'
 import {Link, graphql} from 'gatsby'
 
 import {Layout} from '../components/layout'
-import {Head} from '../components/head'
+import {Header} from '../components/header'
 
 interface Props {
   readonly data: PageQueryData
@@ -15,7 +15,7 @@ export default (props: Props) => {
 
     return (
       <Layout title={siteTitle}>
-        <Head title="All posts" keywords={[`blog`, `gatsby`, `ts`, `react`]} />
+        <Header title="All posts" keywords={[`blog`, `gatsby`, `ts`, `react`]} />
         <article>
           <div>
             {posts.map(({node}) => {

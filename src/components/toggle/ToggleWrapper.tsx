@@ -1,5 +1,3 @@
-// src/components/header.js
-
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
@@ -20,7 +18,7 @@ const Container = styled.header`
   }
 `
 
-export const Header = ({ siteTitle }) => {
+export const ToggleWrapper = ({ siteTitle }) => {
   const { theme, toggleTheme } = useTheme()
   return (
     <Container>

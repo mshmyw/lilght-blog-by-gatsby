@@ -21,7 +21,7 @@ description?: string
 keywords?: string[]
 }
 
-export const Head = (props: HeadProps) => {
+export const Header = (props: HeadProps) => {
   const data: StaticQueryData = useStaticQuery(graphql`
     query {
       site {

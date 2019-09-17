@@ -3,7 +3,7 @@ import {Link, graphql} from 'gatsby'
 import styled from 'styled-components'
 
 import {Layout} from '../components/layout'
-import {Head} from '../components/head'
+import {Header} from '../components/header'
 
 interface Props {
   readonly data: PageQueryData
@@ -28,7 +28,7 @@ export default class PostTemplate extends React.Component<Props> {
 
     return (
       <Layout title={siteTitle}>
-        <Head title={post.frontmatter.title} description={post.excerpt} />
+        <Header title={post.frontmatter.title} description={post.excerpt} />
         <article>
           <header>
             <h1>{post.frontmatter.title}</h1>

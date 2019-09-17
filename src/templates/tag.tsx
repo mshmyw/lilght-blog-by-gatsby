@@ -2,7 +2,7 @@ import React from 'react'
 import {Link, graphql} from 'gatsby'
 
 import {Layout} from '../components/layout'
-import {Head} from '../components/head'
+import {Header} from '../components/header'
 
 interface Props {
   readonly data: PageQueryData
@@ -20,7 +20,7 @@ export default class TagTemplate extends React.Component<Props> {
 
     return (
       <Layout title={siteTitle}>
-        <Head
+        <Header
           title={`Posts tagged "${tag}"`}
           keywords={[`blog`, `gatsby`, `javascript`, `react`, tag]}
         />
