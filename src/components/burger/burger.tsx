@@ -21,29 +21,23 @@ export interface BurgerProps {
   style?: object,
 }
 
-export default class Burger extends React.Component<BurgerProps> {
+const defaultProps = {
+  burger: BurgerType.Collapse,
+  color: '#000',
+  hoverOpacity: 1,
+  scale: 1,
+  marginTop: '25px',
+  marginLeft: '25px',
+};
 
-  public static defaultProps = {
-    burger: BurgerType.Collapse,
-    color: '#000',
-    hoverOpacity: 1,
-    scale: 1,
-    marginTop: '25px',
-    marginLeft: '25px',
-  };
-
-  render() {
-    const {
-      active,
-      onClick,
-      burger,
-      style,
-    } = this.props;
+ const Burger = (props: BurgerProps) => {
+    const { active, onClick, burger, style } = props;
 
     const convertDict = {
       spin: styles.hamburgerSpin,
       spring: styles.hamburgerSpring,
     }
+
     const classes = {
       burger: `${convertDict[burger]} ${styles.hamburgerSpin}`,
       active: `${active ? styles.isActive:''}`,
@@ -61,4 +55,5 @@ export default class Burger extends React.Component<BurgerProps> {
         </div>
       );
     }
-}
+
+export default Burger

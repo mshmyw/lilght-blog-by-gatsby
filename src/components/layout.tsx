@@ -1,6 +1,7 @@
 import React from 'react'
 import styled  from 'styled-components'
 import "./layout.css"
+import styles from "./head.module.css"
 
 import { useStaticQuery, graphql } from "gatsby";
 

@@ -23,3 +23,4 @@ Hello, this is an exciting post with three main points:
 ```js
 console.log(`Hello world, 1 + 1 = ${1 + 1}`)
 ```
+![Ele](../assets/404.gif)

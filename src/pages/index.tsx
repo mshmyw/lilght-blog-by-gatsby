@@ -3,7 +3,6 @@ import {Link, graphql} from 'gatsby'
 
 import {Layout} from '../components/layout'
 import {Head} from '../components/head'
-// import Bio from '../components/bio'
 
 interface Props {
   readonly data: PageQueryData

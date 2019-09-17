@@ -41,7 +41,7 @@ export const AsideComponent = (props: AsideProps) => {
             onClick={hideNav}></OverLayWrap>
           <Nav showNav = {active}>
             <ImgShow/>
-            <Link to={`/`}>&</Link>
+            <Link to={`/`}>Home</Link>
             <Link to={`/tags`}>Tags</Link>
             <Link to={`/about`}>About</Link>
           </Nav>

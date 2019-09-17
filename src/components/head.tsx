@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
+import styles from "./head.module.css"
 
 type StaticQueryData = {
   site: {

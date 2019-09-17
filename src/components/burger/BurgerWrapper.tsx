@@ -1,23 +1,17 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 import Burger from './burger';
 
-export default class BurgerWrapper extends Component {
-  state = {
-    active: false,
-  };
+const BurgerWrapper = (props: any) => {
+  const [active, setActive] = useState(false)
 
-  render() {
-    return (
-      <Burger
-        onClick={() =>
-          this.setState({
-            active: !this.state.active,
-          })
-        }
-        active={this.state.active}
-        {...this.props}
-      />
-    );
-  }
+  return (
+    <Burger
+      onClick={() => setActive(!active)}
+      active={active}
+      {...props}
+    />
+  );
 }
+
+export default BurgerWrapper
