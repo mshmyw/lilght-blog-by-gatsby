@@ -102,3 +102,22 @@
 .react-toggle:active .react-toggle-thumb {
   box-shadow: 0px 0px 5px 5px rgb(255, 167, 196);
 }
+
+
+.themeContainer {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1.45rem 1.0875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btnWrapper {
+  width: 16px;
+  height: 16px;
+}
+
+.btnWrapper:hover {
+  cursor: pointer;
+}

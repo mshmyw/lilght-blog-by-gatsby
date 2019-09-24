@@ -1,10 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import Toggle from "./Toggle"
 
-import sun from "../../images/sun.png"
-import moon from "../../images/moon.png"
+import styles from "./ToggleWrapper.module.css"
 import { useTheme } from "../../context/theme-context"
 
 const Container = styled.header`
@@ -23,44 +21,17 @@ export const ToggleWrapper = ({ siteTitle }) => {
   return (
     <Container>
       <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `1.45rem 1.0875rem`,
-          display: `flex`,
-          justifyContent: `space-between`,
-          alignItems: `center`,
-        }}
+        className={styles.themeContainer}
       >
         <h1 style={{ margin: 0  }}>
           <Link to="/" style={{color: `#03a9f4`}}>{siteTitle}</Link>
         </h1>
-        <Toggle
-          defaultChecked={theme === "dark" ? true : false}
-          onChange={toggleTheme}
-          icons={{
-            checked: (
-              <img
-                style={{ pointerEvents: "none" }}
-                width="16"
-                height="16"
-                alt="moon"
-                aria-hidden
-                src={moon}
-              />
-            ),
-            unchecked: (
-              <img
-                style={{ pointerEvents: "none" }}
-                width="16"
-                height="16"
-                alt="sun"
-                aria-hidden
-                src={sun}
-              />
-            ),
-          }}
-        />
+        <div
+          className={styles.btnWrapper}
+          onClick={toggleTheme}
+        >
+          {theme === "dark" ? "🌙" : "🌞"}
+        </div>
       </div>
     </Container>
   )
