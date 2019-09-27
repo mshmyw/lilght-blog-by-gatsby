@@ -65,7 +65,7 @@ export const Header = (props: HeadProps) => {
           : [],
       )}
     >
-      <script defer src="http://comment.eksma.xyz/js/commento.js"></script>
+      <script defer src="https://comment.eksma.xyz/js/commento.js"></script>
       <script>
         {
           `(function(f, a, t, h, o, m){
