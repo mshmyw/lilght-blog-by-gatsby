@@ -46,7 +46,6 @@ export const Layout = (props: any) => {
             {children}
             <ScrollButton />
           </main>
-          <div id="commento"></div>
           <Footer />
         </div>
       </Container>

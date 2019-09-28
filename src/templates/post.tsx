@@ -66,6 +66,7 @@ export default class PostTemplate extends React.Component<Props> {
             </StyledDiv>
           </div>
         </article>
+        <div id="commento"></div>
       </Layout>
     )
   }
