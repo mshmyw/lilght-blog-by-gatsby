@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import {Layout} from '../components/layout'
 import {Header} from '../components/header'
+import { Identicon } from "../components/identicons/identicon"
 
 interface Props {
   readonly data: PageQueryData
@@ -31,7 +32,17 @@ export default class PostTemplate extends React.Component<Props> {
         <Header title={post.frontmatter.title} description={post.excerpt} />
         <article>
           <header>
-            <h1>{post.frontmatter.title}</h1>
+            <div style={{display: "flex", justifyContent: "space-between"}}>
+              <div style={{fontSize: 48}}>
+                {post.frontmatter.title}
+              </div>
+              <div>
+                <Identicon
+                  bg="#F78DA7"
+                  fg="#00D084"
+                  message={post.frontmatter.title}/>
+              </div>
+            </div>
             <p>{post.frontmatter.date} -
             {post.fields.readingTime.text} - {post.fields.readingTime.words}</p>
           </header>
