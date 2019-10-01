@@ -51,6 +51,7 @@ export const AsideComponent = (props: AsideProps) => {
       <div className={styles.navBarWrap} onClick={() => {setActive(!active)}}>
         {/* <FaBars /> */}
         <Burger
+          hide={active}
           burger={burger}
           color="#0FAFFF"
           hoverOpacity={0.8}

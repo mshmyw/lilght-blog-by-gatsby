@@ -1,10 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Burger from './burger';
 
-const BurgerWrapper = (props: any) => {
-  const [active, setActive] = useState(false)
+interface BurgerWrapperProps {
+  hide: boolean;
+  burger:string;
+  color: string;
+  hoverOpacity: number;
+  scale: number;
+  marginTop: string;
+  marginLeft: string;
+}
 
+const BurgerWrapper = (props: BurgerWrapperProps) => {
+  const { hide } = props;
+  const [active, setActive] = useState(hide)
+
+  useEffect(()=>{
+    if(!hide) {
+      setActive(false);
+    }
+  }, [hide]);
   return (
     <Burger
       onClick={() => setActive(!active)}
