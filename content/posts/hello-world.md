@@ -5,6 +5,7 @@ published: true
 layout: post
 tags: ['markdown', 'hello', 'world']
 category: example
+path: /hello-world
 ---
 
 # netlify 使用

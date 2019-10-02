@@ -10,6 +10,7 @@ writeStream.write(`---
 draft: false
 author: ximenchuixue
 title: ${postName}
+path: /${postName}
 date: ${dayjs().format('YYYY-MM-DD HH:mm:ss')}
 tags: []
 ---

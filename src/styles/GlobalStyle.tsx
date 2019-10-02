@@ -51,6 +51,49 @@ figure {
 
 // These style are based on https://edwardtufte.github.io/tufte-css/
 const styles = () => `
+.css-toc {
+  color: $titleColor;
+  padding: 15px;
+  background: #fcfaf2;
+  margin-bottom: 25px;
+  > ul {
+    padding-left: 16px;
+  }
+  ul {
+    list-style-type: square;
+    list-style-position: outside;
+    margin-bottom: 0;
+    p {
+      vertical-align: top;
+      display: inline-block;
+    }
+  }
+  li {
+    margin-bottom: 0;
+  }
+  li > p {
+    margin-bottom: 0;
+  }
+  li > ul {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1045px) {
+  .css-toc {
+    // position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 331px;
+    max-height: 400px;
+    overflow: scroll;
+    font-size: 14px;
+    li > ul {
+      margin-left: 1rem;
+    }
+  }
+}
+
 html {
   font-size: 15px;
 }

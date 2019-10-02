@@ -4,6 +4,7 @@ author: ximenchuixue
 title: react之跳动的心
 date: 2019-08-21 00:02:14
 tags: []
+path: /blog-create-process
 ---
 
 1. ###  beat heart 的svg形式

@@ -46,6 +46,8 @@ export default class PostTemplate extends React.Component<Props> {
             <p>{post.frontmatter.date} -
             {post.fields.readingTime.text} - {post.fields.readingTime.words}</p>
           </header>
+        <div className="css-toc" dangerouslySetInnerHTML={{__html: post.tableOfContents}} />
+
           <div className={`page-content`}>
             <div dangerouslySetInnerHTML={{__html: post.html}} />
             <StyledDiv>
@@ -82,6 +84,7 @@ interface PageQueryData {
     id?: string
     excerpt?: string
     html: string
+    tableOfContents:string,
     frontmatter: {
       title: string
       date: string
@@ -106,7 +109,11 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      tableOfContents(
+        pathToSlugField: "frontmatter.path"
+      )
       frontmatter {
+        path
         title
         date(formatString: "MMMM DD, YYYY")
       }
