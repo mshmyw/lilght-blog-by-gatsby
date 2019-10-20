@@ -1,5 +1,5 @@
 import styled, {css, createGlobalStyle} from 'styled-components'
-
+import linkImg from "../../static/link_hover_line.svg";
 export {css, styled}
 
 export const theme = {
@@ -250,6 +250,15 @@ a {
 
 a:hover {
   color: #e58c7c;
+  text-decoration: none;
+  background: url(${linkImg}) repeat-x 0 100%;
+  background-size: 20px auto;
+  animation: waveMove 1s infinite linear;
+}
+
+@keyframes waveMove {
+  from { background-position: 0 100%; }
+  to { background-position:-20px 100%; }
 }
 
 img {

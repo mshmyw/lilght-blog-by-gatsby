@@ -15,7 +15,7 @@
     "classnames": "^2.2.6",
     "crypto-js": "^3.1.9-1",
     "dayjs": "^1.8.15",
-    "gatsby": "^2.8.2",
+    "gatsby": "^2.16.5",
     "gatsby-image": "^2.2.8",
     "gatsby-plugin-canonical-urls": "^2.0.13",
     "gatsby-plugin-fathom": "^1.1.0",
