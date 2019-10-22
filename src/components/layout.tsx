@@ -37,31 +37,35 @@ export const Layout = (props: any) => {
     if (!event) {
       return;
     }
-    const d = document.createElement("div");
-    d.className = "heart";
-    heart.push({
-      el: d,
-      x: event.clientX - 5,
-      y: event.clientY - 5,
-      scale: 1,
-      alpha: 1,
-      color: randomColor()
-    });
-    document.body.appendChild(d);
+    if(typeof document !== 'undefined') {
+      const d = document.createElement("div");
+      d.className = "heart";
+      heart.push({
+        el: d,
+        x: event.clientX - 5,
+        y: event.clientY - 5,
+        scale: 1,
+        alpha: 1,
+        color: randomColor()
+      });
+      document.body.appendChild(d);
+    }
   }
 
   const attachEvent = () => {
-    const old = typeof window.onclick === "function" && window.onclick;
-    window.onclick = function (event) {
-      old && old();
-      createHeart(event);
+    if(typeof window !== 'undefined') {
+      const old = typeof window.onclick === "function" && window.onclick;
+      window.onclick = function (event) {
+        old && old();
+        createHeart(event);
+      }
     }
   }
 
   const gameloop = () => {
     for (let i = 0; i < hearts.length; i++) {
       if (hearts[i].alpha <= 0) {
-        document.body.removeChild(hearts[i].el);
+        (typeof document !== undefined) && document.body.removeChild(hearts[i].el);
         hearts.splice(i, 1);
         continue;
       }
