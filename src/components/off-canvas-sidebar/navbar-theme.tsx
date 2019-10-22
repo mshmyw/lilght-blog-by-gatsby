@@ -79,7 +79,7 @@ will-change: opacity;
 export const Nav = styled("div")<AsideProps>`
     position   : relative;
     width      : 90%;
-    max-width   : 400px;
+    max-width   : 337px;
     height     : 100%;
     background : #fff;
     box-shadow  : 2px 0 12px rgba(0,0,0,0.4);
@@ -88,5 +88,5 @@ export const Nav = styled("div")<AsideProps>`
     display    : flex;
     will-change : transform;
     flex-direction: column;
-    float: right;
+    float: left;
 `

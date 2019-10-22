@@ -1,7 +1,7 @@
 .navBarWrap {
   position: fixed;
   top: 25px;
-  right: 25px;
+  left: 25px;
   cursor: pointer;
   z-index: 9999;
 }

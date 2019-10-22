@@ -1,0 +1,23 @@
+
+#rocket.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #rocket:hover {
+    background-position: 50% -62px;
+  }
+
+  #rocket {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    display: block;
+    visibility: hidden;
+    width: 26px;
+    height: 3pc;
+    background: url(../../images/rocket.png) no-repeat 50% 0;
+    cursor: pointer;
+    -webkit-transition: all 0s;
+    transition: all 0s;
+}

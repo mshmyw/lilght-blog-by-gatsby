@@ -38,13 +38,13 @@ export const AsideComponent = (props: AsideProps) => {
         >
           <OverLayWrap
             showNav = {active}
-            onClick={hideNav}></OverLayWrap>
-          <Nav showNav = {active}>
+            onClick={hideNav}/>
+          {active && <Nav showNav = {active}>
             <ImgShow/>
             <Link to={`/`}>Home</Link>
             <Link to={`/tags`}>Tags</Link>
             <Link to={`/about`}>About</Link>
-          </Nav>
+          </Nav>}
         </NavBarOverLayWrap>
       }
 

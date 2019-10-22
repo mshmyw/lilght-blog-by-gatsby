@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import { FaArrowUp } from "react-icons/fa";
+import "./scroll.css";
+import { debounce } from "lodash";
 
 export const ScrollButton = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -11,7 +13,7 @@ export const ScrollButton = () => {
   }
 
   useEffect(()=> {
-    window.addEventListener('scroll', onScroll)
+    window.addEventListener('scroll', debounce(onScroll, 300));
   }, []);
 
 
@@ -22,9 +24,10 @@ export const ScrollButton = () => {
     return (
       <>
         {hasScrolled && (
-          <ScrollToTopIconContainer onClick={scrollToTop}>
-            <Button><FaArrowUp/></Button>
-          </ScrollToTopIconContainer>
+          <div id="rocket" className="show" onClick={scrollToTop}></div>
+          // <ScrollToTopIconContainer onClick={scrollToTop}>
+          //   <Button><FaArrowUp/></Button>
+          // </ScrollToTopIconContainer>
         )}
       </>
     );

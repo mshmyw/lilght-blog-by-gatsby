@@ -60,7 +60,7 @@ const styles = () => `
     padding-left: 16px;
   }
   ul {
-    list-style-type: square;
+    list-style-type: none;
     list-style-position: outside;
     margin-bottom: 0;
     p {
