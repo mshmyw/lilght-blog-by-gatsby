@@ -52,8 +52,12 @@ figure {
 // These style are based on https://edwardtufte.github.io/tufte-css/
 const styles = () => `
 .css-toc {
-  color: $titleColor;
-  padding: 15px;
+  margin: 2em 0;
+  padding: 0px 10px 7px;
+  border: 1px solid #68565a;
+
+  color: #fff;
+  // padding: 15px;
   background: #fcfaf2;
   margin-bottom: 25px;
   > ul {

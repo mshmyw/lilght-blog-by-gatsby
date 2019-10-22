@@ -46,7 +46,8 @@ export default class PostTemplate extends React.Component<Props> {
             <p>{post.frontmatter.date} -
             {post.fields.readingTime.text} - {post.fields.readingTime.words}</p>
           </header>
-        <div className="css-toc" dangerouslySetInnerHTML={{__html: post.tableOfContents}} />
+        <div className="css-toc" dangerouslySetInnerHTML={{__html: post.tableOfContents}} >
+        </div>
 
           <div className={`page-content`}>
             <div dangerouslySetInnerHTML={{__html: post.html}} />
