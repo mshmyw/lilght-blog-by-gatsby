@@ -21,7 +21,7 @@ export const ScrollButton = () => {
 
 
   const scrollToTop = () => {
-    window.scrollTo({
+    typeof window !== 'undefined' && window.scrollTo({
       top: 0,
       // left:100,
       behavior: 'smooth'

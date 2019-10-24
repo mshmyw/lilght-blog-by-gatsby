@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, lazy, Suspense } from 'react'
 import styled from 'styled-components'
 import "./layout.css"
 import styles from "./head.module.css"
@@ -10,7 +10,21 @@ import { ScrollButton } from "./scoll-button/ScrollButton";
 import { Footer } from "./footer/Footer";
 import { ToggleWrapper } from "./toggle/ToggleWrapper";
 import { css, randomColor } from "./utils";
-import { ClapButton } from "./clap-button/clap-button";
+// import { ClapButton } from "./clap-button/clap-button";
+
+// 动态导入，解决 ssr build 没有windod对象的问题
+// https://stackoverflow.com/questions/54090189/webpackerror-window-is-not-defined
+const LazyClapButton = () => {
+  if (typeof window === 'undefined') return <span>loading...</span>
+  const Component = lazy(() => import('./clap-button/clap-button'))
+  return (
+    <>
+      <Suspense fallback={<span>loading...</span>}>
+        <Component />
+      </Suspense>
+    </>
+  )
+}
 
 export const Layout = (props: any) => {
   const data = useStaticQuery(graphql`
@@ -104,7 +118,7 @@ export const Layout = (props: any) => {
         >
           <main id="main" role="main">
             {children}
-            <ClapButton/>
+            <LazyClapButton/>
             <ScrollButton />
           </main>
           <Footer />

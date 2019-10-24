@@ -1,10 +1,10 @@
 import React, {useState, useEffect, useRef } from 'react'
 import { generateRandomNumber } from "./utils";
-import mojs from 'mo-js';
 import "./clap.scss";
+ import mojs from 'mo-js';
 
-export const ClapButton = () => {
-
+// export const ClapButton = () => {
+export default () => {
   const [count, setCount] = useState(0);
   const [countTotal, setCountTotal] = useState(()=> generateRandomNumber(500,10000));
   const [isClicked, setIsClicked] = useState(false);
