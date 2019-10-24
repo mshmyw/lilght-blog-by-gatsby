@@ -127,6 +127,12 @@ module.exports = {
             noInlineHighlight: false,
             }
           },
+          {
+            resolve: `gatsby-plugin-postcss`,
+            options: {
+              postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
+            },
+          },
           `gatsby-remark-autolink-headers`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,

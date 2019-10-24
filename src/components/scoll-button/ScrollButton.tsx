@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import styled from 'styled-components'
-import { FaArrowUp } from "react-icons/fa";
+// import styled from 'styled-components'
+// import { FaArrowUp } from "react-icons/fa";
 import "./scroll.css";
 import { debounce } from "lodash";
 
@@ -14,11 +14,19 @@ export const ScrollButton = () => {
 
   useEffect(()=> {
     window.addEventListener('scroll', debounce(onScroll, 300));
+    return ()=> {
+      window.removeEventListener('scroll', debounce(onScroll, 300));
+    };
   }, []);
 
 
   const scrollToTop = () => {
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox
+    window.scrollTo({
+      top: 0,
+      // left:100,
+      behavior: 'smooth'
+    });
+    // document.documentElement.scrollTop = 0; // For Chrome, Firefox
   }
 
     return (
@@ -33,36 +41,36 @@ export const ScrollButton = () => {
     );
 }
 
-const ScrollToTopIconContainer = styled.div`
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  margin-left: -50px;
-  z-index: 2;
-  cursor: pointer;
-  opacity: 0.4;
-  text-align: center;
-  &:hover {
-    opacity: 1;
-    animation: wiggle 1s ease;
-    animation-iteration-count: 1;
-  }
-  @keyframes wiggle {
-    20% { transform: translateY(6px); }
-    40% { transform: translateY(-6px); }
-    60% { transform: translateY(4px); }
-    80% { transform: translateY(-2px); }
-    100% { transform: translateY(0); }
-  }
-`
+// const ScrollToTopIconContainer = styled.div`
+//   position: fixed;
+//   bottom: 25px;
+//   right: 25px;
+//   margin-left: -50px;
+//   z-index: 2;
+//   cursor: pointer;
+//   opacity: 0.4;
+//   text-align: center;
+//   &:hover {
+//     opacity: 1;
+//     animation: wiggle 1s ease;
+//     animation-iteration-count: 1;
+//   }
+//   @keyframes wiggle {
+//     20% { transform: translateY(6px); }
+//     40% { transform: translateY(-6px); }
+//     60% { transform: translateY(4px); }
+//     80% { transform: translateY(-2px); }
+//     100% { transform: translateY(0); }
+//   }
+// `
 
-const Button = styled.div`
-  background: black;
-  color: white;
-  font-family: Teko;
-  font-size: 16px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  padding-top: 11px;
-`
+// const Button = styled.div`
+//   background: black;
+//   color: white;
+//   font-family: Teko;
+//   font-size: 16px;
+//   border-radius: 50%;
+//   width: 40px;
+//   height: 40px;
+//   padding-top: 11px;
+// `

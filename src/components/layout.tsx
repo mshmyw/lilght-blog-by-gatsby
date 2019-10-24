@@ -10,6 +10,7 @@ import { ScrollButton } from "./scoll-button/ScrollButton";
 import { Footer } from "./footer/Footer";
 import { ToggleWrapper } from "./toggle/ToggleWrapper";
 import { css, randomColor } from "./utils";
+import { ClapButton } from "./clap-button/clap-button";
 
 export const Layout = (props: any) => {
   const data = useStaticQuery(graphql`
@@ -103,6 +104,7 @@ export const Layout = (props: any) => {
         >
           <main id="main" role="main">
             {children}
+            <ClapButton/>
             <ScrollButton />
           </main>
           <Footer />
