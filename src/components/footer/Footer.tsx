@@ -2,9 +2,13 @@ import React from "react"
 import SvgComponent from "../icons/heart"
 import styles from "./Footer.module.css"
 
+import { CommentBox } from "../../comment/index";
+
 export const Footer = () => {
 
-  return (<footer className={styles.footerWrapper}
+  return (<>
+  <CommentBox/>
+  <footer className={styles.footerWrapper}
       style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
       <div style={{marginBottom: 10}}>
       Built with
@@ -26,5 +30,6 @@ export const Footer = () => {
         </div>
     </div>
   </footer>
+  </>
   )
 }
