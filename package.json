@@ -45,7 +45,7 @@
     "less": "^3.9.0",
     "lodash": "^4.17.15",
     "mo-js": "^0.288.2",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "normalize.css": "^8.0.1",
     "postcss-preset-env": "^6.7.0",
     "postcss-scss": "^2.0.0",
